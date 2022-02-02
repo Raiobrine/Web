@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 05</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="questoes.css">
+        <script>
+            function inverterTexto(){
+                var texto = document.getElementById("txt").value;
+                var textoAux = '';
+                for (var i = texto.length - 1; i >= 0; i--){
+                    textoAux += texto[i];
+                }
+                alert("String invertida: " + textoAux);
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <div id="logo">
+                    <img src="tdig.png" width="80px">
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <h1>Questão 5</h1><br>
+            <h4>Insira a string: <input type="text" id="txt"></h4>
+            <input class="btnMenu" type="button" value="Inverter texto" onclick="inverterTexto()"><br><br>
+
+            <a href="salaDeEspera.html"><button class="btnMenu">Sala de Espera</button></a><br><br><br>
+        </div>
+
+        <footer>
+            Roteiro I - Javascript Básico, feito por: Jefferson Gomes
+        </footer>
+    </body>
+
+</html> 

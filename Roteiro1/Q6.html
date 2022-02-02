@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 06</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="questoes.css">
+        <script>
+            function ordenarNumeros(){
+                var numeros = document.getElementById("txtNumeros").value;
+                numeros = numeros.split(",");
+                var aux = 0;
+
+                let n = numeros.length;
+                for (let i = 1; i < n; i++) {
+                    if (isNaN(numeros[i])){
+                        aux += 1;
+                        break;
+                    }
+                    else{
+                        let current = numeros[i];
+                    let j = i-1; 
+                    while ((j > -1) && (current < numeros[j])) {
+                        numeros[j+1] = numeros[j];
+                        j--;
+                    }
+                    numeros[j+1] = current;
+                    }
+                }
+                if(aux != 0 || isNaN(numeros[1])){
+                    alert("Apenas números e virgulas!");
+                }
+                else{
+                    alert("Lista ordenada: [" + numeros + "]");
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <div id="logo">
+                    <img src="tdig.png" width="80px">
+                </div>
+            </div>
+        </header>
+            <div class="container">
+                <h1>Questão 6</h1><br>
+                <h4>Insira os números serapados por vírgula: <input type="text" id="txtNumeros"></h4>
+                <input class="btnMenu" type="button" value="Ordenar lista!" onclick="ordenarNumeros()"><br><br>
+
+                <a href="salaDeEspera.html"><button class="btnMenu">Sala de Espera</button></a><br><br><br>
+            </div>
+
+        <footer>
+            Roteiro I - Javascript Básico, feito por: Jefferson Gomes
+        </footer>
+    </body>
+</html>

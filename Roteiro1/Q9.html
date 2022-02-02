@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 09</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="questoes.css">
+        <script>
+            function mediaPlus(){
+                var numeros = document.getElementById("txtNumeros").value;
+                numeros = numeros.split(",");
+                var resposta = " ";
+                var soma = 0, negativos = 0, positivos = 0, aux = 0;
+                var perNeg = 0.0 ,perPosi = 0.0, media = 0.0; 
+                var quantNum = numeros.length;
+
+                for (i = 0; i < quantNum; i++){
+                    if(isNaN(numeros[i])){
+                        aux++;
+                    }
+                    soma += parseInt(numeros[i]);
+                    if(parseInt(numeros[i]) > 0){
+                        positivos += 1;
+                    }
+                    else if(parseInt(numeros[i]) < 0){
+                        negativos += 1;
+                    }
+                }
+                media = soma / quantNum; 
+                perNeg = (negativos / quantNum) * 100;
+                perPosi = (positivos / quantNum) * 100;
+
+                if(aux != 0){
+                    alert("Use apenas números e vírgulas!");
+                }
+                else{
+                    alert("A quantidade de números positivos é "+ positivos +" e de números negativos é "+negativos+"\nA média aritmética deles é "+media+"\nO percentual de valores positivos é "+perPosi+"% e o de negativos é "+ perNeg + "%");
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <div id="logo">
+                    <img src="tdig.png" width="80px">
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <h1>Questão 9</h1><br>
+            <h4>Insira os números serapados por vírgula: <input type="text" id="txtNumeros"></h4>
+            <input class="btnMenu" type="button" value="Calcular!" onclick="mediaPlus()"><br><br>
+
+            <a href="salaDeEspera.html"><button class="btnMenu">Sala de Espera</button></a><br><br><br>
+        </div>
+
+        <footer>
+            Roteiro I - Javascript Básico, feito por: Jefferson Gomes
+        </footer>
+    </body>
+
+</html>

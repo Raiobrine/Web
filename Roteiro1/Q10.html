@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 10</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="questoes.css">
+        <script>
+            function ordemReversa(){
+                var numeros = document.getElementById("txtNumeros").value;
+                numeros = numeros.split(",");
+                var respostaAux = "";
+                var resposta = " ";
+                var aux = 0;
+                for (var i = numeros.length - 1; i >= 0; i--){
+                    respostaAux += numeros[i];
+                    if(isNaN(numeros[i])){
+                        aux++;
+                    }
+                    if(i > 0){
+                        respostaAux += ", ";
+                    }
+                    else{
+                        respostaAux +="";
+                    }
+                }
+                if(aux != 0){
+                    alert("Usar apenas letras e vírgulas!\n");
+                }
+                else{
+                    alert("Valor(es) invertido(s): [" + respostaAux + "]\n"); 
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <div id="logo">
+                    <img src="tdig.png" width="80px">
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <h1>Questão 10</h1><br>
+            <h4>Insira os números serapados por vírgula: <input type="text" id="txtNumeros"></h4>
+            <input class="btnMenu" type="button" value="Inverter valores!" onclick="ordemReversa()"><br><br>
+
+            <a href="salaDeEspera.html"><button class="btnMenu">Sala de Espera</button></a><br><br><br>
+        </div>
+
+        <footer>
+            Roteiro I - Javascript Básico, feito por: Jefferson Gomes
+        </footer>
+    </body>
+
+
+</html>

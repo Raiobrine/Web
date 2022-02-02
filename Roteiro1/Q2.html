@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 02</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="questoes.css">
+        <script>
+            function verificarMaior(){
+                var numeros = document.getElementById("txtNumeros").value;
+                numeros = numeros.split(",");
+                var maior = parseInt(numeros[0]);
+                var aux = 0;
+
+                for (i = 1; i < numeros.length; i++){
+                    if (isNaN(numeros[i])){
+                        aux += 1;
+                        break;
+                    }
+                    if(numeros.length < 2){
+                        aux += 1;
+                        document.getElementById("txtNumeros").focus();
+                        break;
+                    }
+                    if(parseInt(numeros[i]) > maior){
+                        maior = parseInt(numeros[i]);
+                    }
+                }
+                if(aux != 0){
+                    alert("Apenas números e virgulas!");
+                }
+                else{
+                alert("O maior número digitado é: " + maior);
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <div id="logo">
+                    <img src="tdig.png" width="80px">
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <h1>Questão 2</h1><br>
+            <h4>Insira os números serapados por vírgula: <input type="text" id="txtNumeros"></h4>
+            <input class="btnMenu" type="button" value="Qual é o maior número?" onclick="verificarMaior()"><br><br>
+
+            <a href="salaDeEspera.html"><button class="btnMenu">Sala de Espera</button></a><br><br><br>
+        </div>
+
+        <footer>
+            Roteiro I - Javascript Básico, feito por: Jefferson Gomes
+        </footer>
+    </body>
+
+</html> 

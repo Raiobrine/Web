@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 03</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="questoes.css">
+        <script>
+            function verificarIdadesMaiorMenor18(){
+                var idades = document.getElementById("txtIdades").value;
+                idades = idades.split(",");
+                var maior18 = 0;
+                var menor18 = 0;
+                var resposta = " ";
+                var aux = 0;
+
+                for(i = 0; i < idades.length; i++){
+                    if (idades[i] == ","){
+                        aux++;
+                    }
+
+                }
+                for (i = 0; i < idades.length; i++){
+                    if (isNaN(idades[i])){
+                        aux += 1;
+                        break;
+                    }
+                    if(parseInt(idades[i]) >= 18){
+                        maior18++;
+                    }
+                    else if(idades[i] < 18 && idades[i] > 0){
+                        menor18++;
+                    }
+                    else{
+                        aux += 1;
+                        break;
+                    }
+                }
+                if(aux != 0){
+                    alert("Apenas números positivos e virgulas!");
+                }
+                else{
+                    alert("Quantidade de maiores de 18 anos: " + maior18 + "\ne menores de idade: " + menor18);
+                }
+
+                }
+            
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <div id="logo">
+                    <img src="tdig.png" width="80px">
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <h1>Questão 3</h1><br>
+            <h4>Insira os anos serapados por vírgula: <input type="text" id="txtIdades"></h4>
+            <input class="btnMenu" type="button" value="Somar maiores e menores que 18 anos" onclick="verificarIdadesMaiorMenor18()"><br><br>
+
+            <a href="salaDeEspera.html"><button class="btnMenu">Sala de Espera</button></a><br><br><br>
+        </div>
+
+        <footer>
+            Roteiro I - Javascript Básico, feito por: Jefferson Gomes
+        </footer>
+    </body>
+
+</html> 

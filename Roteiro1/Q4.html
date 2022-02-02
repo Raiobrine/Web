@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 04</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="questoes.css">
+        <script>
+            function separarDiaMesAno(){
+                var data = document.getElementById("txtData").value;
+                var barra = 0, aux = 0;
+                for(i = 0; i < data.length; i++){
+                    if(data[i] == "/" || data[i] == "-"){
+                        barra++;
+                    }
+                }
+                data = data.split("/");
+                for(i = 0; i < data.length; i++){
+                    if (isNaN(data[i]) ||  parseInt(data[i] < 1)){
+                        alert("Usar apenas números positivos!");
+                        aux++;
+                        break;
+                    }
+                    else if(parseInt(data[0]) > 31 || parseInt(data[1]) > 12){
+                        alert("Data inexistente");
+                        aux++;
+                        break;
+                    }
+                }
+                if(barra == 2 && aux == 0){
+                    alert("O dia é: " + data[0] + "\n" + "O mês é: " + data[1] + "\n" + "O ano é: " + data[2] + "\n");
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <div id="logo">
+                    <img src="tdig.png" width="80px">
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <h1>Questão 4</h1><br>
+            <h4>Insira a data serapada por barra: <input type="text" id="txtData"></h4>
+            <input class="btnMenu" type="button" value="Separar dia, mês e ano." onclick="separarDiaMesAno()"><br><br>
+
+            <a href="salaDeEspera.html"><button class="btnMenu">Sala de Espera</button></a><br><br><br>
+        </div>
+        
+        <footer>
+            Roteiro I - Javascript Básico, feito por: Jefferson Gomes
+        </footer>
+    </body>
+
+</html> 
